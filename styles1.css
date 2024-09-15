@@ -1,0 +1,96 @@
+/* all credit for mouse trail work goes to https://www.youtube.com/watch?v=ZotButrBGVI */
+/* 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: pink;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .cursor,
+  .circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: aliceblue;
+    border: 4px solid #000; /* Fixed the border property */
+    /* border-radius: 50%; 
+  } /* 
+  
+  /* .cursor#main {
+    background: black;
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    z-index: 10000;
+  } */ 
+
+
+  /* default margins and paddings */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: pink;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.cursor,
+.circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: aliceblue;
+    border: 4px solid #000; 
+    border-radius: 50%; /* Ensure circles are round */
+}
+
+.cursor#main {
+    z-index: 10000; 
+    background: black;
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Styling for the question mark */
+.question-mark {
+    position: absolute;
+    bottom: 100px; 
+    left: 20px; 
+    font-size: 500px; 
+    color: palevioletred; 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    transition: color 0.3s ease; 
+    z-index: 10001; 
+}
+
+/* Hover effect for the question mark */
+.question-mark:hover {
+    color: white;
+}

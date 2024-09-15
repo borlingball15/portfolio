@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: white;
     margin: 0;
     display: flex;
@@ -25,9 +25,9 @@ body {
     cursor: pointer;
     overflow: hidden;
     transform: scale(1.5); /* Scale up the slider */
-}
 
-.slider-circle {
+
+/* .slider-circle {
     width: 96px;
     height: 96px;
     background-color: #fff;
@@ -52,4 +52,108 @@ body {
     z-index: 1;
     font-family: Arial, Helvetica, sans-serif; 
     font-weight: bold;
+} */ 
+
+
+/* General body styles with background transition */
+body {
+    background-color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s;
+}
+
+/* Slider container */
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Slider styles */
+.slider {
+    width: 15%;
+    height: 105px;
+    background-color: #ccc;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transform: scale(1.5); 
+    transition: background-color 0.5s;
+}
+
+
+.slider-circle {
+    width: 96px;
+    height: 96px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 1s, background-color 1s;
+    border: 2px solid #ccc;
+    z-index: 2;
+}
+
+
+.slider-text {
+    position: absolute;
+    top: 50%;
+    left: -150px; 
+    transform: translateY(-50%);
+    font-size: 13px; 
+    color: black;
+    opacity: 0;
+    transition: left 1s ease, opacity 1s ease;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-weight: bold;
+}
+
+
+.question-mark {
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    font-size: 36px; 
+    color: white; 
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.8s ease, transform 0.3s ease, color 0.3s ease;
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; 
+    z-index: 10; 
+    text-decoration: none; 
+}
+
+
+.slider.active ~ .question-mark {
+    opacity: 1; /* Makes question mark visible */
+}
+
+/* Hover effect for the question mark */
+.question-mark:hover {
+    color: lightpink; 
+    transform: scale(1.2);
+}
+
+/* Active state for slider movement and background change */
+.slider.active .slider-circle {
+    left: calc(100% - 98px); 
+    background-color: lightpink; 
+}
+
+.slider.active .slider-text {
+    left: 20px; 
+    opacity: 1; 
+}
+
+
+body.active {
+    background-color: black;
 }

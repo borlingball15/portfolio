@@ -1,0 +1,124 @@
+<!-- all credit for mouse trail work goes to https://www.youtube.com/watch?v=ZotButrBGVI -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaction Landing</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cursor" id="main">I'm a<br />creative<br />technologist</div>
+    </div>
+
+    <script>
+        let CursorPosition = { x: 0, y: 0 };
+        let isCursorMoving = false;
+        let CursorMoveTimeOut;
+        let circles = [];
+        let CircleRemovalInterval;
+
+        const cursor = document.getElementById("main");
+
+        document.addEventListener("mousemove", (e) => {
+            CursorPosition.x = e.clientX;
+            CursorPosition.y = e.clientY;
+
+            // Update cursor's position (main cursor)
+            cursor.style.left = CursorPosition.x - cursor.offsetWidth / 2 + "px";
+            cursor.style.top = CursorPosition.y - cursor.offsetHeight / 2 + "px";
+
+            isCursorMoving = true;
+
+            clearTimeout(CursorMoveTimeOut);
+
+            CursorMoveTimeOut = setTimeout(() => {
+                isCursorMoving = false;
+
+                setTimeout(() => {
+                    clearInterval(CircleRemovalInterval);
+                    CircleRemovalInterval = setInterval(() => {
+                        if (circles.length > 0) {
+                            let circle = circles.shift();
+                            circle.remove();
+                        } else {
+                            clearInterval(CircleRemovalInterval);
+                        }
+                    }, 25);
+                }, 1000);
+            }, 100);
+        });
+
+        setInterval(() => {
+            if (isCursorMoving) {
+                const circle = document.createElement("div");
+                circle.classList.add("circle");
+                document.body.appendChild(circle);
+
+                // Position the circle at the correct cursor position
+                circle.style.left = CursorPosition.x - circle.offsetWidth / 2 + "px";
+                circle.style.top = CursorPosition.y - circle.offsetHeight / 2 + "px";  // Use y here
+
+                circles.push(circle); // Push circle to the array
+            }
+        }, 10);
+    </script>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaction Landing</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cursor" id="main">I'm a<br />creative<br />technologist</div>
+        <a href="introduction.html" class="question-mark">?</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let CursorPosition = { x: 0, y: 0 };
+            let circles = [];
+
+            const cursor = document.getElementById("main");
+            const questionMark = document.querySelector(".question-mark");
+
+            document.addEventListener("mousemove", (e) => {
+                CursorPosition.x = e.clientX;
+                CursorPosition.y = e.clientY;
+
+                //  cursor's position
+                cursor.style.left = CursorPosition.x - cursor.offsetWidth / 2 + "px";
+                cursor.style.top = CursorPosition.y - cursor.offsetHeight / 2 + "px";
+
+                //  circles to create the trail effect
+                const circle = document.createElement("div");
+                circle.classList.add("circle");
+                document.body.appendChild(circle);
+
+                // cursor position
+                circle.style.left = CursorPosition.x - circle.offsetWidth / 2 + "px";
+                circle.style.top = CursorPosition.y - circle.offsetHeight / 2 + "px";
+
+                circles.push(circle);
+
+                // Remove old circles 
+                if (circles.length > 30) { // number to control trailing circles
+                    let oldCircle = circles.shift();
+                    oldCircle.remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
