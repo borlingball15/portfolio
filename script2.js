@@ -1,4 +1,4 @@
-// Function to generate random streaks
+// colorful lines
 function createStreak() {
     const streak = document.createElement('div');
     streak.classList.add('streak');
@@ -18,6 +18,6 @@ function createStreak() {
 // Add click event listener to the body
 document.body.addEventListener('click', function() {
     for (let i = 0; i < 10; i++) {
-        setTimeout(createStreak, i * 200); // Delay each streak slightly
+        setTimeout(createStreak, i * 200); // helps in delaying the lines
     }
 });
