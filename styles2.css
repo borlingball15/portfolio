@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -23,9 +23,9 @@ html, body {
     align-items: center;
     position: relative;
     z-index: 2; /* Keep text on top */
-}
 
-.main-title {
+
+ /* .main-title {
     color: white;
     font-size: 200px;
     margin-bottom: 0;
@@ -40,25 +40,75 @@ html, body {
 .subheading span {
     color: pink;
     font-size: 54px;
-}
+}  */
 
 /* Styling for streaks */
-.streak {
+/* .streak {
     position: absolute;
     height: 2px;
     width: 100vw;
-    background: red; /* Default color (overridden by JS) */
+    background: red; 
     top: 0;
     left: -100%;
     animation: streak-animation 4s forwards;
-}
+} */
 
 /* Animation for streaks */
-@keyframes streak-animation {
+/* @keyframes streak-animation {
     0% {
         left: -100%;
     }
     100% {
         left: 100%;
     }
+} */
+
+/* Existing styles (same as before) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    user-select: none; /* Prevents text from being selected */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.main-title {
+    color: white;
+    font-size: 200px;
+    margin-bottom: 20px; /* Add space below the title */
+}
+
+.subheading {
+    display: flex;
+    justify-content: center; /* Center the numbers horizontally */
+    align-items: center; /* Center the numbers vertically */
+    gap: 50px; /* Add space between the numbers */
+}
+
+.subheading span {
+    color: pink;
+    font-size: 54px;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection on numbers */
 }
